@@ -1,0 +1,44 @@
+* {
+    font-family: Arial;
+}
+
+body {
+    background-color: white;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #333;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;  /*keep the nevbar in 1 row*/
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+div {
+    padding-left: 25px;
+}
