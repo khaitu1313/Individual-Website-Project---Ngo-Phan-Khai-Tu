@@ -169,3 +169,36 @@ body {
   gap: 20px; /* space between cards */
   padding: 20px; /* optional: adds breathing room */
 }
+
+/* For tablets */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* For phones */
+@media (max-width: 480px) {
+  .search-box input[type="text"] {
+    width: 120px;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
