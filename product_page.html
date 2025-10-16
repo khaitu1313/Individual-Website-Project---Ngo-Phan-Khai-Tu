@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Products</title>
-        <link rel="stylesheet" href="product_style.css">
+        <link rel="stylesheet" href="home_style.css">
     </head>
     <body>
 
@@ -11,9 +11,33 @@
 
             <div class="nav-links">
                 <a href="home_page.html">Home</a>
-                <a href="product_page.html">Products</a>
-                <a href="#">Cart</a>
-                <a href="#">Support</a>
+
+                <div class="dropdown">
+                    <a href="product_page.html" class="dropbtn">Products</a>
+                    <div class="dropdown-content">
+                        <a href="#">New Arrivals</a>
+                        <a href="#">Best Sellers</a>
+                        <a href="#">On Sale</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Cart</a>
+                    <div class="dropdown-content">
+                        <a href="#">View Cart</a>
+                        <a href="#">Checkout</a>
+                        <a href="#">Order History</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Account</a>
+                    <div class="dropdown-content">
+                        <a href="#">Sign-in</a>
+                        <a href="#">Sign-up</a>
+                        <a href="#">Account</a>
+                    </div>
+                </div>
             </div>
 
             <form class="search-box">
@@ -22,8 +46,22 @@
             </form>
         </nav>
 
-        <div id="home">
-            <h1>Hello Youtube!</h1>
+        <div class="product-container">
+            <div class="card">
+                <img src="images/products/sneaker_AG.jpg" alt="Sneakers" style="width:100%">
+                <h1>AG1014</h1>
+                <p class="price">$19.99</p>
+                <p>Some text about the sneakers...</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+
+            <div class="card">
+                <img src="images/products/Air-Jordan-4-Retro.jpg" alt="Sneakers" style="width:100%">
+                <h1>Air Jordan 4 Retro</h1>
+                <p class="price">$99.99</p>
+                <p>Some text about the sneakers...</p>
+                <p><button>Add to Cart</button></p>
+            </div>
         </div>
 
         <footer>
