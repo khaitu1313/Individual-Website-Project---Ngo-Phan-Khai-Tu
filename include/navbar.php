@@ -16,11 +16,10 @@
         </div>
                 
         <div class="dropdown">
-            <a href="#" class="dropbtn">Cart</a>
+            <a href="cart.php" class="dropbtn">Cart</a>
             <div class="dropdown-content">
                 <a href="#">View Cart</a>
                 <a href="#">Checkout</a>
-                <a href="#">Order History</a>
             </div>
         </div>
 
