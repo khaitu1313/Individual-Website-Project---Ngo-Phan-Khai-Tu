@@ -1,6 +1,6 @@
 # Individual-Website-Project---Ngo-Phan-Khai-Tu
-http://localhost/mywebsite/index.php
-http://localhost/phpmyadmin/
+php -S localhost:8000
+http://localhost:8000/product.php
 Individual website project in HTML5, CSS3, JavaScript, PHP, MySQL, responsive design, AJAX, SEO, and basic security practices
 + First commitment: Pushing html and css files to repository
 + Second commitment: Add footer, navbar and images fro main menu

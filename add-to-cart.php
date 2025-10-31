@@ -18,7 +18,7 @@ include 'include/db_connect.php';
 
         $found = FALSE;
         foreach ($_SESSION['cart'] as &$item) {
-            if($item['id'] = $productId) {
+            if($item['id'] == $productId) {
                 $item['quantity']++;
                 $found = TRUE;
                 break;
