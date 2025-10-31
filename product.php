@@ -10,25 +10,24 @@
         <?php include 'include/db_connect.php'; ?>
 
         <main>
-            <div class="product-container">
-                <?php
-                    $sql = "SELECT * FROM products";
-                    $result = $conn->query($sql);
-
-                    if($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "
-                                <div class='card'>
-                                    <img src='{$row['image']}' alt='{$row['name']}' style='width:100%'>
-                                    <h1>{$row['name']}</h1>
-                                    <p class='price'>\${$row['price']}</p>
-                                    <p>{$row['description']}</p>
-                                    <p><button class='add-to-cart' product-id='{$row['id']}'>Add to Cart</button></p>
-                                </div>
-                            ";
-                        }
-                    }
-                ?>
+            <!-- Sorting dropdown -->
+            <div class="sorting-container">
+                <label for="sort">Sort by:</label>
+                <select name="sort" id="sort">
+                    <option value="default">Default</option>
+                    <option value="name_asc">Name(A-Z)</option>
+                    <option value="name_desc">Name(Z-A)</option>
+                    <option value="price_asc">Price(Low-High)</option>
+                    <option value="price_desc">Price(High-Low)</option>
+                </select>
+            </div>
+            
+            <!-- Products showcase + AJAX scroll -->
+            <div class="product-container" id="product-container">
+                <!-- Loader -->
+                <div id="loader">
+                    <div class="spinner"></div>
+                </div>
             </div>
         </main>
 

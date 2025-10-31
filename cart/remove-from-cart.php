@@ -10,6 +10,6 @@ if (isset($_GET['index'])) {
     }
 }
 
-header("Location: cart.php");
+header("Location: ../cart.php");
 exit();
 ?>

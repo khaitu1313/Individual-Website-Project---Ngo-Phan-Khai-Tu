@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to call PHP via AJAX
     function updateQuantity(index, action, inputField) {
-        fetch("update-cart.php", {
+        fetch("cart/update-cart.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: "index=" + encodeURIComponent(index) + "&action=" + encodeURIComponent(action)

@@ -24,7 +24,7 @@
                 ?>
                         <div class="cart-item">
                             <!-- Function htmlspecialchars() protects items'names from Cross-Site Scripting (XSS) attacks. -->
-                            <img src="<?= htmlspecialchars($item['name']) ?>" alt="<?= htmlspecialchars($item['name']) ?>">
+                            <img src="<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>">
                             <div class="cart-detail">
                                 <h3><?= htmlspecialchars($item['name']) ?></h3>
                                 <p>Price: $<?= number_format($item['price'], 2) ?></p>
@@ -37,7 +37,7 @@
                                 <p><strong>Subtotal: $<?= number_format($subtotal, 2) ?></strong></p>
 
                                 <!-- Remove from cart -->
-                                <form action="remove-from-cart.php" method="GET" style="display:inline;">
+                                <form action="cart/remove-from-cart.php" method="GET" style="display:inline;">
                                     <input type="hidden" name="index" value="<?php echo $i; ?>">
                                     <button type="submit" class="remove-btn">Remove</button>
                                 </form>

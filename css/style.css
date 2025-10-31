@@ -5,6 +5,7 @@
   font-family: Arial, sans-serif;
 }
 
+/* ===== Navbar ===== */
 nav {
   width: 100%;
   background-color: black;
@@ -69,6 +70,7 @@ nav {
   background-color: #3e8e41;
 }
 
+/* Search bar */
 .search-box {
   display: flex;
   align-items: center;
@@ -97,10 +99,12 @@ nav {
     background-color: #e68900;
 }
 
+/* ===== Page's body ===== */
 body {
     background-color: white;
 }
 
+/* ===== Footer =====*/
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 equal columns */
@@ -110,6 +114,7 @@ body {
   color: black;
 }
 
+/* ===== Main menu image grid ===== */
 .image-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 equal halves of the screen */
@@ -124,7 +129,7 @@ body {
 }
 
 
-/* Product container - center cards and space them nicely */
+/* ===== Product cards =====*/
 .product-container {
   display: flex;
   justify-content: center;
@@ -186,7 +191,7 @@ body {
   flex-grow: 1; /* ensures consistent card height */
 }
 
-/* Button styling */
+/* Add to cart button */
 .card button {
   border: none;
   outline: 0;
@@ -206,8 +211,25 @@ body {
   background-color: #e68900;
 }
 
+/* Sorting feature */
+.sort-container select {
+  padding: 6px 12px;
+  border-radius: 6px;
+}
 
-/* For phones */
+#load-more {
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#load-more:hover {
+  background: #555;
+}
+
+
+/* Adjusting for phones */
 @media (max-width: 480px) {
   .search-box input[type="text"] {
     width: 120px;
@@ -222,7 +244,7 @@ body {
   }
 }
 
-/* ======== CART PAGE STYLES ======== */
+/* ===== CART PAGE STYLES ===== */
 
 .cart-container {
     max-width: 900px;
@@ -281,6 +303,7 @@ body {
     color: #222;
 }
 
+/* Checkout button */
 .checkout-btn {
     background-color: #28a745;
     color: white;
@@ -303,6 +326,7 @@ body {
     color: #555;
 }
 
+/* Remove button */
 .remove-btn {
     background-color: #ff4d4d;
     color: white;
@@ -316,7 +340,7 @@ body {
     background-color: #cc0000;
 }
 
-/* ======== Quantity Buttons ======== */
+/* Quantity Buttons */
 .quantity-form {
     display: inline-block;
     margin-top: 5px;

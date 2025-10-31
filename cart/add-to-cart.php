@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'include/db_connect.php';
+include '../include/db_connect.php';
 
     if (isset($_POST['id'])) {
         $productId = $_POST['id'];
