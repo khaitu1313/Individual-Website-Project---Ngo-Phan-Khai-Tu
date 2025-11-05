@@ -4,8 +4,9 @@
     $limit = 6; // Max products load
     $offset = isset($_GET['offset']) ? (int)$_GET['offset'] : 0; // Number of items already loaded (if not provided then = 0)
     $sort = $_GET['sort'] ?? 'default'; // If exist sort parameter, use it, otherwise use default
+    $search = $_GET['search'] ?? '';
 
-    // Sorting with SQL 'ORDER BY'
+    // Sorting using SQL 'ORDER BY'
     switch($sort) {
         case 'name_asc': $order = "ORDER BY name ASC"; break;
         case 'name_desc': $order =  "ORDER BY name DESC"; break;
@@ -14,9 +15,18 @@
         default: $order = "";
     }
 
-    $sql = "SELECT * FROM products $order LIMIT ? OFFSET ?";
-    $stmt = $conn->prepare($sql);   // Prevent SQL injection
-    $stmt->bind_param("ii", $limit, $offset); // Bind limit and offset to integer
+    if(!(empty($search))) {
+        $sql = "SELECT * FROM products WHERE name LIKE ? $order LIMIT ? OFFSET ?"; // '?' are parameters which are bound later
+        $stmt = $conn->prepare($sql);   // secure sql from sql injection 
+        $searchTerm = "%$search%";      // users'searching term
+        $stmt->bind_param("sii", $searchTerm, $limit, $offset); // bind searchTerm(string), limit and offset(both integer)
+    }
+    else {
+        $sql = "SELECT * FROM products $order LIMIT ? OFFSET ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ii", $limit, $offset);
+    }
+
     $stmt->execute();
     $result = $stmt->get_result();
 

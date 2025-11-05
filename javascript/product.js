@@ -30,17 +30,21 @@ function handleScroll() {
 
 window.addEventListener('scroll', handleScroll);
 
-function loadProducts() {
+function loadProducts(search = "") {
     loading = true;
     loader.style.display = 'block';
 
-    const params = new URLSearchParams({ offset, sort });
-    fetch('product/get-product.php?' + params.toString())
-        .then(res => res.text())
+    // Using AJAX for loading products
+    const params = new URLSearchParams({ offset, sort, search });   // sent params to server
+    fetch('product/get-product.php?' + params.toString())   // request using fetch()
+        .then(res => res.text())                            // handle server response
         .then(data => {
             const cleanData = data.trim();
             if (cleanData !== '') {
-                productContainer.insertAdjacentHTML('beforeend', cleanData);
+                if (offset === 0) {
+                    productContainer.innerHTML = ''; // offset === 0 means offset == 0 and type(offset) = type(0)
+                }
+                productContainer.insertAdjacentHTML('beforeend', cleanData); // update UI dynamically
                 offset += 6; // same as PHP $limit
                 attachAddToCartEvents(); // events for new products
             } else {
@@ -59,7 +63,7 @@ function loadProducts() {
 
 // Handle Add-to-cart
 function attachAddToCartEvents() {
-    const buttons = document.querySelectorAll(".add-to-cart:not([data-bound])"); // [data-bound] preventing adding new eventlistener to the buttons that already had one
+    const buttons = document.querySelectorAll(".add-to-cart:not([data-bound])"); // [data-bound] preventing adding new eventlistener to the buttons that already had one while loading
 
     buttons.forEach(button => {
         button.dataset.bound = "true"; // prevent double binding
@@ -83,4 +87,44 @@ function attachAddToCartEvents() {
 }
 
 // Run on initial load too
-document.addEventListener("DOMContentLoaded", attachAddToCartEvents);
+document.addEventListener("DOMContentLoaded", () => {
+    attachAddToCartEvents();
+    setUpSearch();
+    handleSearchParam();
+});
+
+function setUpSearch() {
+    const searchForm = document.querySelector(".search-box");
+    const searchInput = searchForm.querySelector("input[type='text']");
+
+    searchForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const query = searchInput.value.trim();  // remove spare spaces
+
+        if (query) {
+            // If user is NOT in product page, redirect to product page
+            if (!(window.location.pathname.includes("product.php"))) {
+                window.location.href = "product.php?search=" + encodeURIComponent(query);
+            }
+            // If already in product page, perform AJAX search
+            else {
+                offset = 0;
+                allLoaded = false;
+                productContainer.innerHTML = '';
+                loadProducts(query);
+            }
+        }
+    });
+}
+
+// Handle ?search= query from URL
+function handleSearchParam() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const search = urlParams.get("search");
+    const searchInput = document.querySelector(".search-box input[type='text']");
+
+    if (search && searchInput) {
+        searchInput.value = search;
+        loadProducts(search); // auto load filtered results
+    }
+}
