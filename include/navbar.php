@@ -23,11 +23,13 @@
             </div>
         </div>
 
-        <a href="#">Account</a>
+        <div class="dropdown">
+            <a href="login.php" class="dropbtn">Account</a>
+            <div class="dropdown-content">
+                <a href="register.php">Register</a>
+                <a href="login.php">Login</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
     </div>
-
-    <form class="search-box">
-        <input type="text" placeholder="Search...">
-        <button type="submit">Search</button>
-    </form>
 </nav>

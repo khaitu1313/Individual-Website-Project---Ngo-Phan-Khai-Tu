@@ -3,6 +3,9 @@
     <head>
         <title>Cart</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/cart.css">
     </head>
     <body>
 
@@ -56,5 +59,6 @@
 
         <!-- Link to javascript -->
         <script src="javascript/cart.js"></script>
+        <script src="javascript/product.js"></script>
     </body>
 </html>

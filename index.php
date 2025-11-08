@@ -8,6 +8,9 @@
         <meta name="description" content="Buy sneakers online — Nike, Adidas, Jordan and more at MySite.">
 
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/footer.css">
     </head>
 
     <body>
@@ -23,5 +26,7 @@
 
         <?php include 'include/footer.php'; ?>
 
+        <!-- Javascript Linking -->
+        <script src="javascript/product.js" defer></script>
     </body>
 </html>

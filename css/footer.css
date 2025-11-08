@@ -1,0 +1,9 @@
+/* ===== Footer =====*/
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 equal columns */
+  gap: 20px;                      /* space between */
+  padding: 20px;
+  background-color: lightskyblue;
+  color: black;
+}

@@ -15,6 +15,7 @@
         default: $order = "";
     }
 
+    //Search products
     if(!(empty($search))) {
         $sql = "SELECT * FROM products WHERE name LIKE ? $order LIMIT ? OFFSET ?"; // '?' are parameters which are bound later
         $stmt = $conn->prepare($sql);   // secure sql from sql injection 
@@ -30,6 +31,7 @@
     $stmt->execute();
     $result = $stmt->get_result();
 
+    //Product cards show case
     if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             echo "
