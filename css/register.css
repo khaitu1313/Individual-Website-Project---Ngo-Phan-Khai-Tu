@@ -1,0 +1,105 @@
+/* ---------- REGISTER FORM STYLE ---------- */
+
+.registration-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px 35px;
+    background: #ffffff;
+    border-radius: 10px;
+
+    /* special effect: card shadow */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.registration-container h3 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Labels */
+.registration-container label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: -10px;
+    color: #222;
+}
+
+/* Inputs */
+.registration-container input[type="text"],
+.registration-container input[type="email"],
+.registration-container input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+
+    /* special effect: smooth focus transition */
+    transition: 0.25s;
+}
+
+/* special effect: focus highlight border + glow */
+.registration-container input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px #007bff55;
+}
+
+/* Sign Up Button */
+.registration-container input[type="submit"] {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+
+    /* special effect: smooth hover animation */
+    transition: 0.25s;
+}
+
+/* special effect: button color change on hover */
+.registration-container input[type="submit"]:hover {
+    background: #005fc5;
+}
+
+/* Sign in link */
+.container.signin {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.container.signin a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+
+    /* special effect: smooth underline on hover */
+    transition: 0.2s;
+}
+
+.container.signin a:hover {
+    text-decoration: underline;
+}
+
+/* Center the form */
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 60px 0;
+    
+    /* special effect: light background for contrast */
+    background: #f6f9fc;
+}

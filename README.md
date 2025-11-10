@@ -1,6 +1,6 @@
 # Individual-Website-Project---Ngo-Phan-Khai-Tu
-php -S localhost:8000
-http://localhost:8000/product.php
+CMD: php -S localhost:8000
+Local: http://localhost:8000/product.php
 
 Individual website project in HTML5, CSS3, JavaScript, PHP, MySQL, responsive design, AJAX, SEO, and basic security practices
 + First commitment: Pushing html and css files to repository

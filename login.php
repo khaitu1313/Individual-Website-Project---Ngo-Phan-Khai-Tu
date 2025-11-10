@@ -7,11 +7,11 @@
         <link rel="stylesheet" href="css/footer.css">
     </head>
     <body>
-
+        <!-- Include files linking -->
         <?php include 'include/navbar.php'; ?>
         <?php include 'include/db_connect.php'; ?>
 
-        <main class="#">
+        <main>
             
         </main>
 

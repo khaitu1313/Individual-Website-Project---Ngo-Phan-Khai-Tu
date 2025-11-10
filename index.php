@@ -14,7 +14,7 @@
     </head>
 
     <body>
-
+        <!-- Include files linking -->
         <?php include 'include/navbar.php'; ?>
 
         <main>

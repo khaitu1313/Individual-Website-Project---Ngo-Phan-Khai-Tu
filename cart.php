@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/cart.css">
     </head>
     <body>
-
+        <!-- Include files linking -->
         <?php include 'include/navbar.php'; ?>
         <?php include 'include/db_connect.php'; ?>
         <?php session_start(); ?>

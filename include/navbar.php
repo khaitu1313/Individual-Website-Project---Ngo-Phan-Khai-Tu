@@ -26,9 +26,9 @@
         <div class="dropdown">
             <a href="login.php" class="dropbtn">Account</a>
             <div class="dropdown-content">
-                <a href="register.php">Register</a>
-                <a href="login.php">Login</a>
-                <a href="#">Logout</a>
+                <a href="register.php">Sign Up</a>
+                <a href="login.php">Sign In</a>
+                <a href="#">Sign Out</a>
             </div>
         </div>
     </div>
