@@ -2,6 +2,10 @@
 session_start();
 include 'include/db_connect.php';
 
+$firstname = $lastname = $email = $phone = $address = $username = "";
+$message = "";
+$redirect = false;
+
 if (isset($_POST['create'])) {
     $firstname = trim($_POST['firstname']);
     $lastname  = trim($_POST['lastname']);
@@ -9,63 +13,50 @@ if (isset($_POST['create'])) {
     $phone     = trim($_POST['phone']);
     $address   = trim($_POST['address']);
     $username  = trim($_POST['username']);
-    $password  = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password  = $_POST['password'];
+    // password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     // Validate email quickly
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "<script>alert('Please enter a valid email address.');</script>";
+        $message = "Please enter a valid email address";
     } else {
         // Prepare check statement
         $check_sql  = "SELECT id FROM users WHERE email = ? OR username = ?";
         $check_stmt = $conn->prepare($check_sql);
 
-        if ($check_stmt === false) {
-            // prepare() failed
-            error_log("Prepare failed: " . $conn->error);
-            echo "<script>alert('Server error. Please try again later.');</script>";
-        } else {
+        if($check_stmt) {
             $check_stmt->bind_param("ss", $email, $username);
             $check_stmt->execute();
-
-            // Use store_result() + num_rows - compatible without mysqlnd
             $check_stmt->store_result();
 
-            if ($check_stmt->num_rows > 0) {
-                // email or username already exists
-                echo "<script>alert('⚠️ Email or username already exists. Please choose another.');</script>";
+            if($check_stmt->num_rows > 0) {
+                $message = "⚠️ Email or username already exists. Please choose another.";
+                $email = "";
+                $username = "";
+                $password = "";
             } else {
+                $hash = password_hash($password, PASSWORD_DEFAULT);
                 $sql  = "INSERT INTO users (firstname, lastname, email, phone, address, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
 
-                if ($stmt === false) {
-                    error_log("Prepare failed: " . $conn->error);
-                    echo "<script>alert('Server error. Please try again later.');</script>";
-                } else {
-                    $stmt->bind_param("sssssss", $firstname, $lastname, $email, $phone, $address, $username, $password);
-                    $result = $stmt->execute();
-
-                    if ($result) {
-                        echo "<script>alert('✅ Successfully registered!');</script>";
+                if($stmt) {
+                    $stmt->bind_param("sssssss", $firstname, $lastname, $email, $phone, $address, $username, $hash);
+                    if($stmt->execute()) {
+                        $message = "✅ Successfully registered! Redirecting to login...";
+                        $redirect = true;
                     } else {
-                        error_log("Insert failed: " . $stmt->error);
-                        echo "<script>alert('❌ Registration failed. Please try again later.');</script>";
+                        $message = "❌ Registration failed. Please try again later.";
                     }
+
+                    $stmt->close();
                 }
             }
-
-            // Close check statement
             $check_stmt->close();
-        }
-
-        // Close insert statement if it exists
-        if (isset($stmt) && $stmt instanceof mysqli_stmt) {
-            $stmt->close();
+        } else {
+            $message = "Server error. Please try again later.";
         }
     }
 
-    // Close connection
-    if (isset($conn) && $conn instanceof mysqli) {
-        $conn->close();
-    }
+    $conn->close();
 }
 ?>

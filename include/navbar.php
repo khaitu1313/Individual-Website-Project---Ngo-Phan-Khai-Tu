@@ -3,7 +3,12 @@
 <nav>
     <a href="index.php" class="logo">Sneaker</a>
 
-    <div class="nav-links">
+    <!-- Hamburger icon for mobile -->
+    <!-- <div class="hamburger" id="hamburger">
+        &#9776;
+    </div> -->
+
+    <div class="nav-links" id="nav-links">
         <a href="index.php">Home</a>
 
         <div class="dropdown">

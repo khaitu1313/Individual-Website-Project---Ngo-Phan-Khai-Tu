@@ -10,7 +10,7 @@ nav {
 }
 
 .logo {
-  color: lightskyblue;
+  color: #007bff;
   font-size: 28px;
   font-weight: bold;
   text-decoration: none;
@@ -33,6 +33,11 @@ nav {
 
 .nav-links a:hover {
   color: lightskyblue;
+}
+
+/* Ensure dropdowns are positioned relative to parent */
+.dropdown {
+  position: relative;
 }
 
 /* Dropdown content */

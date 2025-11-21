@@ -11,7 +11,7 @@ Individual website project in HTML5, CSS3, JavaScript, PHP, MySQL, responsive de
     * Product cards design
     * Product cart
     * Adding to cart
-    * remove from cart
+    * Remove from cart
     * Infinite scroll product page
     * Sorting
     * Search bar

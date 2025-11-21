@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Home Page</title>
-        <meta name="description" content="Buy sneakers online — Nike, Adidas, Jordan and more at MySite.">
+        <meta name="description" content="Buy sneakers online — Nike, Adidas, Jordan and Puma at MySite.">
 
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/index.css">
