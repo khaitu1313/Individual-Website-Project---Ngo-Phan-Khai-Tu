@@ -12,8 +12,16 @@
     </head>
     <body>
         <!-- Include files linking -->
-        <?php include 'include/navbar.php'; ?>
-        <?php include 'include/db_connect.php'; ?>
+        <?php
+            session_start();
+
+            if (isset($_SESSION['username'])) {
+                header("Location: dashboard.php");
+                exit;
+            }
+            include 'include/navbar.php';
+            include 'include/db_connect.php';
+        ?>
 
         <main>
             <div class="login-container">
@@ -23,20 +31,20 @@
                     <h2>Login</h2>
 
                     <div class="social-login">
-                        <a href="social_login/google.php">
+                        <a href="authentication/social_callback.php?provider=google">
                             <img src="images/logo/gg.png" alt="Google Login">
                         </a>
 
-                        <a href="social_login/facebook.php">
+                        <a href="authentication/social_callback.php?provider=facebook">
                             <img src="images/logo/fb.png" alt="Facebook Login">
                         </a>
 
-                        <a href="social_login/twitter.php">
+                        <a href="authentication/social_callback.php?provider=twitter">
                             <img src="images/logo/tt.png" alt="Twitter Login">
                         </a>
                     </div>
 
-                    <form action="login_process.php" method="POST">
+                    <form action="authentication/sign-in.php" method="POST">
                         <div class="input-group">
                             <label for="username">Username</label>
                             <input type="username" id="username" name="username" required />
@@ -60,13 +68,21 @@
                     <img src="images/login/login.png" alt="Sneaker Image Placeholder">
                 </div>
 
+                <!-- LOGIN POP-UP -->
+                <div id="popup" class="popup hidden">
+                    <div class="popup-box">
+                        <span id="popup-icon"></span>
+                        <p id="popup-message"></p>
+                    </div>
+                </div>
+
             </div>
         </main>
 
         <?php include 'include/footer.php'; ?>
 
         <!-- Javascript Linking -->
-        <script src="#"></script>
+        <script src="javascript/login.js"></script>
 
     </body>
 </html>

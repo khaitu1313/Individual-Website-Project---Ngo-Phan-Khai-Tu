@@ -5,8 +5,8 @@
         <div id="contact">
             <p>Contact us:</p>
             <ul>
-                <li>Email: ******@gmail.com</li>
-                <li>Mobile: 1900 **********</li>
+                <li>Email: khaitu1313@gmail.com</li>
+                <li>Mobile: 1900 9999</li>
             </ul>
         </div>
 

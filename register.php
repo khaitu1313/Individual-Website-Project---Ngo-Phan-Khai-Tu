@@ -9,9 +9,12 @@
     </head>
     <body>
         <!-- Include files linking -->
-        <?php include 'include/navbar.php'; ?>
-        <?php include 'include/db_connect.php'; ?>
-        <?php include 'authentication/sign-up.php'; ?>
+        <?php
+            include 'include/navbar.php';
+            include 'include/db_connect.php';
+            include 'authentication/sign-up.php';
+        ?>
+        
 
         <main class="#">
             <form action="register.php" method="post">

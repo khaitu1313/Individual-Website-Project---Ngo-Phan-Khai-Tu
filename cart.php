@@ -9,9 +9,11 @@
     </head>
     <body>
         <!-- Include files linking -->
-        <?php include 'include/navbar.php'; ?>
-        <?php include 'include/db_connect.php'; ?>
-        <?php session_start(); ?>
+        <?php 
+            session_start();
+            include 'include/navbar.php';
+            include 'include/db_connect.php'; 
+        ?>
 
         <main class="cart-page">
             <div class="cart-container">
@@ -49,7 +51,10 @@
                 <?php endforeach; ?>
                     <div class="cart-summary">
                         <h2>Total: $<?= number_format($total, 2) ?></h2>
-                        <button class="checkout-btn">Checkout</button>
+                        <form action="checkout/checkout_redirect.php" method="POST">
+                            <input type="hidden" name="total" value="<?= $total ?>">
+                            <button type="submit" class="checkout-btn">Checkout</button>
+                        </form>
                     </div>
                 <?php endif; ?>
             </div>

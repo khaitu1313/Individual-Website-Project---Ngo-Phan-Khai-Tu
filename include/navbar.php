@@ -14,9 +14,9 @@
         <div class="dropdown">
             <a href="product.php" class="dropbtn">Products</a>
             <div class="dropdown-content">
-                <a href="#">New Arrivals</a>
-                <a href="#">Best Sellers</a>
-                <a href="#">On Sale</a>
+                <a href="#">Nike</a>
+                <a href="#">Jordan</a>
+                <a href="#">Puma</a>
             </div>
         </div>
                 
@@ -24,7 +24,7 @@
             <a href="cart.php" class="dropbtn">Cart</a>
             <div class="dropdown-content">
                 <a href="cart.php">View Cart</a>
-                <a href="#">Checkout</a>
+                <a href="order.php">View Orders</a>
             </div>
         </div>
 
@@ -33,7 +33,6 @@
             <div class="dropdown-content">
                 <a href="register.php">Sign Up</a>
                 <a href="login.php">Sign In</a>
-                <a href="#">Sign Out</a>
             </div>
         </div>
     </div>

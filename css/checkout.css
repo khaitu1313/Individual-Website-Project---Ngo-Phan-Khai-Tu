@@ -1,0 +1,61 @@
+.checkout-container {
+    max-width: 450px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.qr {
+    width: 250px;
+    display: block;
+    margin: 20px auto;
+}
+
+.pay-btn {
+    background: #0099ff;
+    padding: 12px 20px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px auto;
+    display: block;   /* makes margin auto work */
+}
+
+.pay-btn:hover {
+    background: #007acc;
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    display: none;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    animation: pop 0.2s ease-in;
+}
+
+.popup-box img {
+    width: 90px;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}

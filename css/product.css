@@ -176,3 +176,12 @@
         width: 100%;
     }
 }
+
+/* Out of Stock Label */
+.out-of-stock {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+}

@@ -12,6 +12,7 @@
     </head>
     <body>
         <!-- Include files linking -->
+        <?php session_start(); ?>
         <?php include 'include/navbar.php'; ?>
         <?php include 'include/db_connect.php'; ?>
 

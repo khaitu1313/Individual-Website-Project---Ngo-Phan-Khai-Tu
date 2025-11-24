@@ -1,0 +1,69 @@
+/* ===== ORDERS PAGE STYLES (MATCH CART) ===== */
+
+.order-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.order-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Single order item (same layout as cart-item) */
+.order-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.order-details {
+    flex: 1;
+}
+
+.order-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.order-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Date */
+.order-date {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Empty orders */
+.no-orders {
+    text-align: center;
+    font-size: 18px;
+    padding: 40px 0;
+    color: #555;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    padding: 40px 0;
+    color: #555;
+}

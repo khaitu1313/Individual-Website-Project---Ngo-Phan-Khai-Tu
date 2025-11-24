@@ -15,12 +15,25 @@
 
     <body>
         <!-- Include files linking -->
+        <?php session_start();?>
         <?php include 'include/navbar.php'; ?>
 
         <main>
             <div id="home">
-                <img src="images/main-menu/main-menu(1).jpg" alt="vertical" style="height:500px; width:500px">
-                <img src="images/main-menu/main-menu(2).jpg" alt="Horizontal Image" style="height:500px; width: 900px;">
+                <!-- Image -->
+                <div class="left-image">
+                    <img src="images/main-menu/main-menu(1).jpg" alt="Store Banner" class="banner-img">
+                </div>
+
+                <!-- Google Maps -->
+                <div class="right-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5046388940455!2d106.65512307451715!3d10.77260825926519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec17709146b%3A0x54a1658a0639d341!2zxJDhuqFpIEjhu41jIELDoWNoIEtob2EgLSAyNjggTMO9IFRoxrDhu51uZyBLaeG7h3Q!5e0!3m2!1svi!2s!4v1733400000000!5m2!1svi!2s"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
         </main>
 

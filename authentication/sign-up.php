@@ -30,7 +30,7 @@ if (isset($_POST['create'])) {
             $check_stmt->store_result();
 
             if($check_stmt->num_rows > 0) {
-                $message = "⚠️ Email or username already exists. Please choose another.";
+                $message = "Email or username already exists. Please choose another.";
                 $email = "";
                 $username = "";
                 $password = "";
@@ -42,10 +42,10 @@ if (isset($_POST['create'])) {
                 if($stmt) {
                     $stmt->bind_param("sssssss", $firstname, $lastname, $email, $phone, $address, $username, $hash);
                     if($stmt->execute()) {
-                        $message = "✅ Successfully registered! Redirecting to login...";
+                        $message = "Successfully registered! Redirecting to login...";
                         $redirect = true;
                     } else {
-                        $message = "❌ Registration failed. Please try again later.";
+                        $message = "Registration failed. Please try again later.";
                     }
 
                     $stmt->close();

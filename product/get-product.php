@@ -34,13 +34,20 @@
     //Product cards show case
     if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
+            $stock = (int)$row['stock'];
+            if ($stock > 0) {
+                $stockHTML = "<button class='add-to-cart' product-id='{$row['id']}' data-stock='{$stock}'>Add to Cart</button>";
+            } else {
+                $stockHTML = "<span class='out-of-stock'>Out of Stock</span>";
+            }
+
             echo "
                 <div class='card'>
                     <img src='{$row['image']}' alt='{$row['name']}' style='width:100%'>
                     <h1>{$row['name']}</h1>
                     <p class='price'>\${$row['price']}</p>
                     <p>{$row['description']}</p>
-                    <p><button class='add-to-cart' product-id='{$row['id']}'>Add to Cart</button></p>
+                    <p>$stockHTML</p>
                 </div>
                 ";           
         }             

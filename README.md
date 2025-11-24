@@ -19,4 +19,6 @@ Individual website project in HTML5, CSS3, JavaScript, PHP, MySQL, responsive de
 + Authentication:
     * Sign-up form
     * Users' db control
+    * Sign-in form
+    * Sign-out
 
