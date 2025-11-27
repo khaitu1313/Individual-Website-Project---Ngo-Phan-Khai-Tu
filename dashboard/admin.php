@@ -9,12 +9,12 @@
             <p>View, edit, and remove user accounts.</p>
         </a>
 
-        <a href="admin/manage-products.php" class="admin-card">
+        <a href="dashboard/admin/manage-products.php" class="admin-card">
             <h4>🛒 Products</h4>
             <p>Add, edit, or delete products in your shop.</p>
         </a>
 
-        <a href="admin/manage-orders.php" class="admin-card">
+        <a href="dashboard/admin/manage-orders.php" class="admin-card">
             <h4>📦 Orders</h4>
             <p>Review and update customer orders.</p>
         </a>
