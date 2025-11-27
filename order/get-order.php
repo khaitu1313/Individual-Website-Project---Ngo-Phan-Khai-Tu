@@ -42,7 +42,7 @@ while ($row = $result->fetch_assoc()) {
 
     $img   = htmlspecialchars($row['product_image']);
     $name  = htmlspecialchars($row['product_name']);
-    $value = number_format($row['amount'], 0);
+    $value = number_format($row['amount'], 0, ',', '.');
     $date  = $row['order_date'];
 
     echo "
@@ -51,7 +51,7 @@ while ($row = $result->fetch_assoc()) {
         
         <div class='order-details'>
             <h3>$name</h3>
-            <p><strong>$value₫</strong></p>
+            <p><strong>$ {$value}</strong></p>
             <p class='order-date'>Ordered on: $date</p>
             <p>Order ID: {$row['order_id']}</p>
         </div>

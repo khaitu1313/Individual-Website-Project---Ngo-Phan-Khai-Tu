@@ -1,12 +1,23 @@
 <?php if ($role === 'admin'): ?>
 <div class="admin-section">
-    <h3>Admin Panel</h3>
-    <p>You are an admin — you have elevated privileges.</p>
+    <h3 class="admin-title">Admin Dashboard</h3>
+    <p class="admin-desc">Welcome, Admin! Select a management option below:</p>
 
-    <ul>
-        <li><a href="admin/manage-users.php">Manage Users</a></li>
-        <li><a href="admin/manage-products.php">Manage Products</a></li>
-        <li><a href="admin/manage-orders.php">Manage Orders</a></li>
-    </ul>
+    <div class="admin-grid">
+        <a href="dashboard/admin/manage-users.php" class="admin-card">
+            <h4>👤 Users</h4>
+            <p>View, edit, and remove user accounts.</p>
+        </a>
+
+        <a href="admin/manage-products.php" class="admin-card">
+            <h4>🛒 Products</h4>
+            <p>Add, edit, or delete products in your shop.</p>
+        </a>
+
+        <a href="admin/manage-orders.php" class="admin-card">
+            <h4>📦 Orders</h4>
+            <p>Review and update customer orders.</p>
+        </a>
+    </div>
 </div>
 <?php endif; ?>

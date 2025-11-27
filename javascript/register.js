@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (shouldRedirect) {
-        window.location.href = "../login.php";
+        window.location.href = '/mywebsite/login.php';
     }
 });

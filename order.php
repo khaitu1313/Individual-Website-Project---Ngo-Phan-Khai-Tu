@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
         <meta charset="UTF-8">
         <title>Your Orders</title>
 
-        <link rel="stylesheet" href="css/orders.css">
+        <link rel="stylesheet" href="css/order.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" href="css/footer.css">

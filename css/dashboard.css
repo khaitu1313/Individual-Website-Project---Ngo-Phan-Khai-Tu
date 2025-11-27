@@ -34,3 +34,95 @@ a.btn {
 a.btn:hover {
     opacity: 0.8;
 }
+
+.admin-section {
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.admin-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.admin-desc {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.admin-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-card {
+    flex: 1 1 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #eee;
+    transition: 0.3s ease;
+}
+
+.admin-card:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+/* --- USER SECTION --- */
+.user-section {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.section-desc {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.user-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.user-card {
+    flex: 1 1 250px;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease;
+}
+
+.user-card h4 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.user-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+.user-card:hover {
+    background: white;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
