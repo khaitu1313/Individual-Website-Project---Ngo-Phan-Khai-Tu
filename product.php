@@ -51,5 +51,6 @@
 
         <!-- Javascript Linking -->
         <script src="javascript/product.js"></script>
+        <script> const BRAND_FILTER = "<?= $_GET['brand'] ?? '' ?>"; </script>
     </body>
 </html>

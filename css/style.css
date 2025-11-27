@@ -151,7 +151,7 @@ body {
   }
 
   .logo {
-    font-size: 22px;
+    font-size: 15px;
     margin-right: 0;  /* center align logo */
   }
 
@@ -193,6 +193,44 @@ body {
     font-size: 14px;
   }
 }
+
+/* Responsive for tablet and phone */
+@media (max-width: 1024px) {
+    .product-page {
+        display: flex;
+        flex-direction: column; /* stack sidebar on top */
+    }
+
+    .sidebar {
+        width: 100%; /* full width */
+        margin-bottom: 20px;
+    }
+}
+
+/* Additional optimization for small phones */
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 15px;
+        border-radius: 6px;
+    }
+
+    .search-box input[type="text"] {
+        width: 100%;
+        border-radius: 25px;
+        margin-bottom: 10px;
+    }
+
+    .search-box button {
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    .sort-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
 
 
 /* PC - Laptop:

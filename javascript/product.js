@@ -65,7 +65,8 @@ function loadProducts(search = curSearch) {
     const params = new URLSearchParams({
         offset,
         sort,
-        search: curSearch
+        search: curSearch,
+        brand: BRAND_FILTER
     });
 
     fetch("product/get-product.php?" + params.toString())

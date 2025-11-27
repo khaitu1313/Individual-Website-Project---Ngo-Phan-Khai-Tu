@@ -14,9 +14,9 @@
         <div class="dropdown">
             <a href="product.php" class="dropbtn">Products</a>
             <div class="dropdown-content">
-                <a href="#">Nike</a>
-                <a href="#">Jordan</a>
-                <a href="#">Puma</a>
+                <a href="product.php?brand=Nike">Nike</a>
+                <a href="product.php?brand=Jordan">Jordan</a>
+                <a href="product.php?brand=Puma">Puma</a>
             </div>
         </div>
                 
