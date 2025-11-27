@@ -124,6 +124,76 @@ body {
   }
 }
 
+/* ======== RESPONSIVE NAVBAR FIXES ======= */
+
+/* Tablet (768px–991px) */
+@media (max-width: 991px) {
+  nav {
+    padding: 15px 25px;
+  }
+
+  .logo {
+    font-size: 24px; 
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+}
+
+/* Phones (480px–767px) */
+@media (max-width: 767px) {
+
+  nav {
+    flex-direction: column;
+    padding: 12px 20px;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 22px;
+    margin-right: 0;  /* center align logo */
+  }
+
+  .nav-links {
+    flex-wrap: wrap;       /* allow wrapping */
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  /* dropdown should still stay on top */
+  .dropdown-content {
+    position: static; 
+    width: 100%;
+    box-shadow: none;
+    background: #f7f7f7;
+  }
+
+  .dropdown-content a {
+    text-align: center;
+  }
+}
+
+/* Small phones (<=480px) */
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+}
+
 
 /* PC - Laptop:
   + 4 products per row
