@@ -47,7 +47,7 @@ while ($row = $result->fetch_assoc()) {
 
     echo "
     <div class='order-item'>
-        <img src='../$img' alt='Product'>
+        <img src='$img' alt='Product'>
         
         <div class='order-details'>
             <h3>$name</h3>

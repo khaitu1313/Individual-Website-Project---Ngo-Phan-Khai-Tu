@@ -24,7 +24,7 @@ $types = "";
 // Search filter
 if (!empty($search)) {
     $conditions[] = "name LIKE ?";
-    $params[] = "%$search%";
+    $params[] = "$search%";
     $types .= "s";
 }
 
@@ -69,13 +69,15 @@ if ($result->num_rows > 0) {
         }
 
         echo "
-            <div class='card'>
-                <img src='{$row['image']}' alt='{$row['name']}' style='width:100%'>
-                <h1>{$row['name']}</h1>
-                <p class='price'>\${$row['price']}</p>
-                <p>{$row['description']}</p>
-                <p>$stockHTML</p>
-            </div>
+            <a href='product-detail.php?id={$row['id']}' class='product-link'>
+                <div class='card'>
+                    <img src='{$row['image']}' alt='{$row['name']}' style='width:100%'>
+                    <h1>{$row['name']}</h1>
+                    <p class='price'>\${$row['price']}</p>
+                    <p>{$row['description']}</p>
+                    <p>$stockHTML</p>
+                </div>
+            </a>
         ";
     }
 }
